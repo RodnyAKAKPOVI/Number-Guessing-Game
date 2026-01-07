@@ -1,4 +1,7 @@
 # Number-Guessing-Game
+
+Project URL: https://roadmap.sh/projects/number-guessing-game
+
 Here's a first draft to the number guessing game problem from the roadmap community.
 
 Instructions:
@@ -19,3 +22,4 @@ If the user's guess is incorrect, the game should display a message indicating w
 The game should end when the user guesses the correct number or runs out of chances.
 
 Notes: In my version of the game, the player chooses the highest number of the intervall (the lowest one is 1) and the number of chances he wants. Apart from that everything is basically the same.
+
