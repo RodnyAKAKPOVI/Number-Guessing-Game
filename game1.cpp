@@ -7,16 +7,19 @@
 
 using namespace std;
 
-int main() {
+int main(int argc, char* argv[]) {
     cout << "********************* NUMBER GUESSING GAME ********************* \n\n"
          << "Welcome to the number guessing game.\n\n"
          << "The rules are quite simple: you will have to guess a number randomly generated between 1 and an upper limit. Good luck!\n" << endl;
 
-    int highestOption, tries, guess;
-    cout << "What's your highest option ? \t";
-    cin >> highestOption;
-    cout << "How many tries do you think you will need ? \t";
-    cin >> tries;
+    if (argc < 3) {
+        cout << "Usage: ./game <highestOption> <tries> \n";
+        return 1;
+    }
+
+    int highestOption = stoi(argv[1]);
+    int tries = stoi(argv[2]);
+    int guess;
 
     srand(time(NULL));
     int bingo = rand() % highestOption + 1;
@@ -48,7 +51,7 @@ int main() {
 
     }
 
-    if (tries == 0) {
+    if (tries == 0 && guess != bingo) {
         cout << "What a shame! You ran out of trials. The correct number was: " << bingo << ". Good luck next time!\n";
     }
 
